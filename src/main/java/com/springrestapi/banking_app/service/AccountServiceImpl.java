@@ -37,9 +37,9 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public AccountDto createAccount(AccountDto accountDto) {
         Account account = new Account();
-        account.setAccountNumber(accountDto.getAccountNumber());
-        account.setAccountHolderName(accountDto.getAccountHolderName());
-        account.setBalance(accountDto.getBalance());
+        account.setAccountNumber(accountDto.accountNumber());
+        account.setAccountHolderName(accountDto.accountHolderName());
+        account.setBalance(accountDto.balance());
         Account savedAccount = accountRepository.save(account);
 
         return accountMapper.toDto(savedAccount);
